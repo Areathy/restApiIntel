@@ -1,17 +1,18 @@
 package com.henrietha.restApi.service;
 
+import com.henrietha.restApi.dto.BookDTO;
 import com.henrietha.restApi.entity.Book;
 
 import java.util.List;
 
 public interface BookService {
-    Book createBook(Book book);
+    BookDTO createBook(BookDTO book);
 
-    Book updateBook(Book book);
+    BookDTO updateBook(BookDTO book);
 
-    List<Book> getAllBook();
+    List<BookDTO> getAllBook();
 
-    Book getBookById(long bookId);
+    BookDTO getBookById(long bookId);
 
     void deleteBook(long id);
 }
