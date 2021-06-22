@@ -17,7 +17,7 @@ public class CountryController {
 
     @GetMapping(value = "/list")
     public List<?> listCountries() {
-        List<GetCountryResponse> response  = consumeRestAPI.getBooks2();
+        List<GetCountryResponse> response  = consumeRestAPI.getCountries();
         List<String> names = new ArrayList<>();
         for (GetCountryResponse res: response) {
             names.add(res.getTranslation().getBr());
@@ -30,7 +30,7 @@ public class CountryController {
 
     @GetMapping(value = "/extra")
     public String extraCalls() {
-        String response  = consumeRestAPI.getBooks();
+        String response  = consumeRestAPI.getUrl();
 //        String google = response.substring(0,30);
 
         return response;

@@ -14,13 +14,13 @@ public class ConsumeRestAPI {
     @Autowired
     private RestTemplate restTemplate;
 
-    public List<GetCountryResponse> getBooks2() {
+    public List<GetCountryResponse> getCountries() {
         String url = "https://restcountries.eu/rest/v2/all";
         GetCountryResponse[] getCountryResponses = restTemplate.getForObject(url, GetCountryResponse[].class);
         return Arrays.asList(getCountryResponses);
     }
 
-    public String getBooks() {
+    public String getUrl() {
         String url = "https://www.google.com";
         String objects = restTemplate.getForObject(url, String.class);
         return objects;
