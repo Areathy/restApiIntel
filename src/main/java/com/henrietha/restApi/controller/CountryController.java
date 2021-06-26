@@ -11,9 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/country")
 public class CountryController {
-
-    @Autowired
     private ConsumeRestAPI consumeRestAPI;
+
+    public CountryController(ConsumeRestAPI consumeRestAPI) {
+        this.consumeRestAPI = consumeRestAPI;
+    }
 
     @GetMapping(value = "/list")
     public List<?> listCountries() {

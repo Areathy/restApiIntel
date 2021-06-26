@@ -10,9 +10,11 @@ import java.util.List;
 
 @Service
 public class ConsumeRestAPI {
-
-    @Autowired
     private RestTemplate restTemplate;
+
+    public ConsumeRestAPI(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public List<GetCountryResponse> getCountries() {
         String url = "https://restcountries.eu/rest/v2/all";

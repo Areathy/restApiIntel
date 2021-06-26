@@ -11,8 +11,11 @@ import java.util.List;
 
 @RestController
 public class BookController {
-    @Autowired
     private BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     @GetMapping("/books")
     public ResponseEntity<List<BookDTO>> getAllBook(){
